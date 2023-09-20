@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Records</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    input[type="submit"]:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Search Patients' Records</h1>
+  
+  <form action="/search" method='post'>
+    <label for="pcmID">Record ID:</label>
+    <input type="text" id="pcmID" name="pcmID" placeholder="Enter record ID">
+
+    <label for="articleDate">Article Date:</label>
+    <input type="text" id="articleDate" name="articleDate" placeholder="Enter record date (DD/MM/YYYY)">
+
+    <label for="keyword">Keyword:</label>
+    <input type="text" id="keyword" name="keyword" placeholder="Enter a medical term">
+
+    <label>
+      <input type="radio" name="search_mode" value="some" checked> Some Words
+    </label>
+    <label>
+        <input type="radio" name="search_mode" value="exact"> Exact Words
+    </label>
+
+    </br>
+
+    <label for="Search">Search records in: </label>
+
+    <label>
+        <input type="checkbox" name="search_in_comparisons" value="1" checked> Search in Comparisons
+    </label>
+    <label>
+        <input type="checkbox" name="search_in_indications" value="1" checked> Search in Indications
+    </label>
+    <label>
+        <input type="checkbox" name="search_in_findings" value="1" checked> Search in Findings
+    </label>
+    <label>
+        <input type="checkbox" name="search_in_impressions" value="1" checked> Search in Impressions
+    </label>
+
+    <input type="submit" value="Search Records">
+  </form>
+
+</body>
+</html>
